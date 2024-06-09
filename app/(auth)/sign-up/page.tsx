@@ -1,5 +1,5 @@
 "use client";
-import React, { useMemo, useState } from "react";
+import React, { Suspense, useMemo, useState } from "react";
 
 import { cn } from "@/cn";
 import * as z from "zod";
@@ -14,31 +14,39 @@ import { IconArrowRight, IconBellCheck } from "@tabler/icons-react";
 import Logo from "@/public/cypresslogo.svg";
 import Image from "next/image";
 
-import { actionLoginUser, actionSignUpUser } from "@/lib/server-action/auth-actions";
+import { actionSignUpUser } from "@/lib/server-action/auth-actions";
 import { toast } from "sonner";
 import BorderMagicButton from "@/components/ui/borderMagicButton";
 import clsx from "clsx";
 import Pill from "@/components/ui/Pill";
-const SignUpPage = () => {
-  const router = useRouter();
-  const [submitError, setSubmitError] = useState("");
-  const searchParams = useSearchParams();
-  const [confirmation, setConfirmation] = useState(false);
 
+function CheckMAil({ confirmation }: { confirmation: boolean }) {
+  const searchParams = useSearchParams();
   const codeExchangeError = useMemo(() => {
     if (!searchParams) return "";
     return searchParams.get("error_description");
   }, [searchParams]);
 
-  const confirmationAndErrorStyles = useMemo(
-    () =>
-      clsx("bg-primary", {
-        "bg-red-500/10": codeExchangeError,
-        "border-red-500/50": codeExchangeError,
-        "text-red-700": codeExchangeError,
-      }),
-    [codeExchangeError]
+  return (
+    <>
+      {confirmation ||
+        (codeExchangeError && (
+          <Pill
+            containerClassName="mt-4 px-2 py-3 w-full bg-success"
+            className="flex justify-center items-center gap-4 text-foreground text-medium"
+          >
+            <IconBellCheck /> Please verify your email.
+          </Pill>
+        ))}
+    </>
   );
+}
+
+const SignUpPage = () => {
+  const router = useRouter();
+  const [submitError, setSubmitError] = useState("");
+  const [confirmation, setConfirmation] = useState(false);
+
   const { register, handleSubmit, formState, reset } = useForm<
     z.infer<typeof SignUpFormSchema>
   >({
@@ -134,20 +142,14 @@ const SignUpPage = () => {
         />
       </form>
       <Link href="/auth/login" className="text-sm dark:text-washed-purple-200">
-        Already have an account?{" "}
+        Already have an account?
         <span className="underline underline-offset-2 ml-1 dark:no-underline dark:text-primary-purple-500">
           Log in
         </span>
       </Link>
-      {confirmation ||
-        (codeExchangeError && (
-          <Pill
-            containerClassName="mt-4 px-2 py-3 w-full bg-success"
-            className="flex justify-center items-center gap-4 text-foreground text-medium"
-          >
-            <IconBellCheck /> Please verify your email.
-          </Pill>
-        ))}
+      <Suspense fallback={null}>
+        <CheckMAil confirmation={confirmation} />
+      </Suspense>
     </div>
   );
 };
