@@ -19,7 +19,7 @@ const Dashboard = async (props: Props) => {
   });
 
   if (!workspace) return <CreateWorkspace user={user} />;
-  else redirect(`/dashboard/${workspace.id}`);
+  redirect(`/dashboard/${workspace.id}`);
 };
 
 export default Dashboard;
