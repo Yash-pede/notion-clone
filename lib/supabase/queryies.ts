@@ -12,7 +12,6 @@ export const getUserSubscriptionStatus = async (userId: string) => {
     if (data) return { data: data as Subscription, error: null };
     else return { data: null, error: null };
   } catch (error) {
-    console.log(error);
 
     return { data: null, error: `error ${error}` };
   }

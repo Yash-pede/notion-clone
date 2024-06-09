@@ -1,5 +1,6 @@
-import CreateWorkspace from "@/components/workspace/CreateWorkspace";
+import DashBoardSetup from "@/components/dashboard-setup/dashboard-setup";
 import db from "@/lib/supabase/db";
+import { getUserSubscriptionStatus } from "@/lib/supabase/queryies";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
@@ -17,8 +18,17 @@ const Dashboard = async (props: Props) => {
   const workspace = await db.query.workspaces.findFirst({
     where: (workspace, { eq }) => eq(workspace.workspace_owner, user.id),
   });
+  const { data: subscription, error: subscriptionError } =
+    await getUserSubscriptionStatus(user.id);
+    
+  if (subscriptionError) return;
 
-  if (!workspace) return <CreateWorkspace user={user} />;
+  if (!workspace)
+    return (
+      <div className="w-full h-screen grid place-items-center">
+        <DashBoardSetup subscription={subscription} user={user} />
+      </div>
+    );
   redirect(`/dashboard/${workspace.id}`);
 };
 
