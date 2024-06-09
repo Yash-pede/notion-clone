@@ -14,6 +14,14 @@ import {
 import Image from "next/image";
 
 import Logo from "@/public/cypresslogo.svg";
+
+const routes = [
+  { title: "Features", href: "#features" },
+  { title: "Reasources", href: "#resources" },
+  { title: "Pricing", href: "#pricing" },
+  { title: "Testimonials", href: "#testimonial" },
+];
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -44,28 +52,20 @@ export default function Header() {
       </NavbarContent>
 
       <NavbarContent
-        className="hidden sm:flex gap-4 border border-divider rounded-full h-fit py-2 px-3.5"
+        className="hidden sm:flex gap-4 border border-divider rounded-full h-fit py-2 px-4"
         justify="center"
       >
-        <NavbarItem>
-          <Link className="text-white" href="#">
-            Features
-          </Link>
-        </NavbarItem>
-        <NavbarItem >
-          <Link className="text-white" href="#">
-            Customers
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link className="text-white" href="#">
-            Integrations
-          </Link>
-        </NavbarItem>
+        {routes.map((route, index) => (
+          <NavbarItem key={index}>
+            <Link className="text-white" href={route.href}>
+              {route.title}
+            </Link>
+          </NavbarItem>
+        ))}
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link className="text-washed-purple-50" href="#">
+          <Link className="text-washed-purple-50" href="/login">
             Login
           </Link>
         </NavbarItem>

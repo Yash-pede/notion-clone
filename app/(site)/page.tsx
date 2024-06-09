@@ -43,7 +43,7 @@ export default function Home() {
       <section className="relative">
         <ScrollingCard />
       </section>
-      <section
+      <section id="features"
         className="px-4
         sm:px-6
         flex
@@ -85,7 +85,7 @@ export default function Home() {
           <Image src={cal} alt="Banner" className="rounded-2xl" />
         </div>
       </section>
-      <section className="z-10 relative">
+      <section className="z-10 relative" id="testimonial">
         <div className="w-full blur-[120px] rounded-full h-32 absolute bg-brand-primaryPurple/50 -z-10 top-56" />
         <div
           className="mt-20
@@ -128,7 +128,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="z-10 mt-20 px-4 sm:px-6 relative">
+      <section className="z-10 mt-20 px-4 sm:px-6 relative" id="pricing">
         <TitleSection
           title="The Perfect Plan For You"
           subheading="Experience all the benefits of our platform. Select a plan that suits your needs and take your productivity to new heights."
