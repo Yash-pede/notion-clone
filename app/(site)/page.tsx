@@ -5,11 +5,10 @@ import TitleSection from "@/components/landing-page/title-section";
 import { PRICING_CARDS, USERS } from "@/lib/constants";
 import { AppBanner, cal } from "@/public/images";
 import ScrollingCard from "@/components/landing-page/ScrollingCard";
-import TestimonialCard from "@/components/landing-page/TestimonialCard";
-import clsx from "clsx";
 import PricingPlanCard from "@/components/landing-page/PricingPlanCard";
 import BorderMagicButton from "@/components/ui/borderMagicButton";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
 export default function Home() {
   return (
@@ -43,7 +42,8 @@ export default function Home() {
       <section className="relative">
         <ScrollingCard />
       </section>
-      <section id="features"
+      <section
+        id="features"
         className="px-4
         sm:px-6
         flex
@@ -103,29 +103,8 @@ export default function Home() {
             personal and professional productivity needs."
             pill="Testimonials"
           />
-          {[...Array(2)].map((arr, index) => (
-            <div
-              key={index}
-              className={twMerge(
-                clsx("mt-10 flex flex-nowrap gap-6 self-start", {
-                  "flex-row-reverse": index === 1,
-                  "animate-[slide_250s_linear_infinite]": true,
-                  "animate-[slide_250s_linear_infinite_reverse]": index === 1,
-                  "ml-[100vw]": index === 1,
-                }),
-                "hover:paused"
-              )}
-            >
-              {USERS.map((testimonial, index) => (
-                <TestimonialCard
-                  key={index}
-                  index={index}
-                  {...testimonial}
-                  className="shrink-0 dark:bg-gradient-to-t dark:from-divider dark:to-background"
-                />
-              ))}
-            </div>
-          ))}
+          <InfiniteMovingCards items={USERS} direction="right" speed="superSlow" />
+          <InfiniteMovingCards items={USERS} direction="left" speed="normal" />
         </div>
       </section>
       <section className="z-10 mt-20 px-4 sm:px-6 relative" id="pricing">

@@ -141,7 +141,7 @@ const SignUpPage = () => {
           }
         />
       </form>
-      <Link href="/auth/login" className="text-sm dark:text-washed-purple-200">
+      <Link href="/login" className="text-sm dark:text-washed-purple-200">
         Already have an account?
         <span className="underline underline-offset-2 ml-1 dark:no-underline dark:text-primary-purple-500">
           Sign up

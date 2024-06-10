@@ -50,16 +50,14 @@ const DashBoardSetup = (props: Props) => {
               </div>
               <div className="w-full">
                 <Input
-                  type="text"
                   description="This name will be visible to all other contributors."
+                  disabled={isLoading}
                   label="Workspace Name"
-                  disabled={
-                    isLoading || props.subscription?.status !== "active"
-                  }
                   labelPlacement="outside"
+                  type="text"
                   variant="bordered"
-                  {...register("workspaceName",{
-                    required:"A Workspace name is required"
+                  {...register("workspaceName", {
+                    required: "A Workspace name is required",
                   })}
                 />
                 <small className="text-red-600">
@@ -75,12 +73,12 @@ const DashBoardSetup = (props: Props) => {
               type="file"
               variant="bordered"
               accept="image/*"
-              {...register("logo",{
-                required:"A Workspace logo is required"
+              {...register("logo", {
+                required: "A Workspace logo is required",
               })}
             />
             <small className="text-red-600">
-              {errors.logo  ?.message?.toString()}
+              {errors.logo?.message?.toString()}
             </small>
           </div>
         </form>
