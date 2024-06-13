@@ -1,8 +1,7 @@
 import Image from "next/image";
 
-import { twMerge } from "tailwind-merge";
 import TitleSection from "@/components/landing-page/title-section";
-import { PRICING_CARDS, USERS } from "@/lib/constants";
+import { CLIENTS, PRICING_CARDS, USERS } from "@/lib/constants";
 import { AppBanner, cal } from "@/public/images";
 import ScrollingCard from "@/components/landing-page/ScrollingCard";
 import PricingPlanCard from "@/components/landing-page/PricingPlanCard";
@@ -39,19 +38,17 @@ export default function Home() {
         </ContainerScroll>
         <div className="absolute bottom-0 left-0 right-0 z-10 top-1/2 bg-gradient-to-t dark:from-background " />
       </section>
-      <section className="relative">
-        <ScrollingCard />
+      <section className="grid place-items-center">
+        <ScrollingCard
+          direction="right"
+          items={CLIENTS}
+          pauseOnHover={false}
+          speed="fast"
+        />
       </section>
       <section
+        className="px-4 sm:px-6 flex justify-center items-center flex-col relative"
         id="features"
-        className="px-4
-        sm:px-6
-        flex
-        justify-center
-        items-center
-        flex-col
-        relative
-      "
       >
         <div
           className="w-[30%]
@@ -103,7 +100,11 @@ export default function Home() {
             personal and professional productivity needs."
             pill="Testimonials"
           />
-          <InfiniteMovingCards items={USERS} direction="right" speed="superSlow" />
+          <InfiniteMovingCards
+            items={USERS}
+            direction="right"
+            speed="superSlow"
+          />
           <InfiniteMovingCards items={USERS} direction="left" speed="normal" />
         </div>
       </section>
