@@ -10,16 +10,16 @@ export const CLIENTS = [
 
 export const USERS = [
   {
-    name: "Alice",
-    title: "Alice bhai",
+    name: "Raj",
+    title: "Raj bhai",
     quote:
       "Cypress has been a game-changer for our team. With its reliable end-to-end testing, we catch bugs early, leading to faster development cycles and improved collaboration.",
   },
   {
-    name: "Bob",
-    title: "Bob bhai",
+    name: "Dhiren",
+    title: "Dhiren bhiya",
     quote:
-      "I used to spend hours debugging frontend issues, but Cypress simplified everything. Now, I'm more productive, and my colleagues can trust our code thanks to Cypress.",
+      "I am a very strict guy and I love Cypress. I've been using it for a long time, but Cypress simplified everything. Now, I'm more productive, and my colleagues can trust our code thanks to Cypress.",
   },
   {
     name: "Charlie",
@@ -28,16 +28,16 @@ export const USERS = [
       "Cypress has transformed the way we work. Our QA and development teams are on the same page, and our productivity has skyrocketed. It's a must-have tool.",
   },
   {
-    name: "David",
-    title: "David bhai",
+    name: "Raj Bidu",
+    title: "Raj Bidu",
     quote:
       "I was skeptical at first, but Cypress exceeded my expectations. Our project timelines have improved, and collaboration between teams is seamless.",
   },
   {
-    name: "Ella",
-    title: "Ella bhai",
+    name: "Aditi",
+    title: "Aditi bhai",
     quote:
-      "Cypress made writing and running tests a breeze. Our team's productivity has never been higher, and we're delivering more reliable software.",
+      "Cypress has made our testing process smoother. Our team has improved our productivity and collaboration. It's a must-have tool.",
   },
   {
     name: "Frank",
@@ -50,78 +50,6 @@ export const USERS = [
     title: "Grace bhai",
     quote:
       "Cypress has improved our development process significantly. We now have more time for innovation, and our products are of higher quality.",
-  },
-  {
-    name: "Hank",
-    title: "Hank bhai",
-    quote:
-      "Cypress's user-friendly interface made it easy for our non-technical team members to contribute to testing. Our workflow is much more efficient now.",
-  },
-  {
-    name: "Ivy",
-    title: "Ivy bhai",
-    quote:
-      "Our team's collaboration improved immensely with Cypress. We catch issues early, leading to less friction and quicker feature deployments.",
-  },
-  {
-    name: "Jack",
-    title: "Jack bhai",
-    quote:
-      "Cypress's robust testing capabilities have elevated our development standards. We work more harmoniously, and our releases are more reliable.",
-  },
-  {
-    name: "Katherine",
-    title: "Katherine bhai",
-    quote:
-      "Cypress is a lifesaver for our cross-functional teams. We're more productive, and there's a shared sense of responsibility for product quality.",
-  },
-  {
-    name: "Liam",
-    title: "Liam bhai",
-    quote:
-      "Cypress has helped us maintain high standards of quality. Our team's collaboration has improved, resulting in faster development cycles.",
-  },
-  {
-    name: "Mia",
-    title: "Mia bhai",
-    quote:
-      "Cypress is a powerful tool that improved our productivity and collaboration. It's now an integral part of our development process.",
-  },
-  {
-    name: "Nathan",
-    title: "Nathan bhai",
-    quote:
-      "Cypress's user-friendly interface and detailed reporting have made testing a breeze. Our team's productivity is at an all-time high.",
-  },
-  {
-    name: "Olivia",
-    title: "Olivia bhai",
-    quote:
-      "We saw immediate benefits in terms of productivity and collaboration after adopting Cypress. It's an essential tool for our development workflow.",
-  },
-  {
-    name: "Paul",
-    title: "Paul bhai",
-    quote:
-      "Cypress has streamlined our testing process and brought our teams closer. We're more efficient and deliver better results.",
-  },
-  {
-    name: "Quinn",
-    title: "Quinn bhai",
-    quote:
-      "Cypress has been a game-changer for us. Our productivity and collaboration have improved significantly, leading to better software.",
-  },
-  {
-    name: "Rachel",
-    title: "Rachel bhai",
-    quote:
-      "Thanks to Cypress, our testing process is now a seamless part of our development cycle. Our teams collaborate effortlessly.",
-  },
-  {
-    name: "Sam",
-    title: "Sam bhai",
-    quote:
-      "Cypress is a fantastic tool that has revolutionized our workflow. Our productivity and collaboration have reached new heights.",
   },
 ];
 

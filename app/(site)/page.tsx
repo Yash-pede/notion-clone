@@ -92,6 +92,7 @@ export default function Home() {
           flex-col
           overflow-x-hidden
           overflow-visible
+          mx-auto items-center justify-center
         "
         >
           <TitleSection
