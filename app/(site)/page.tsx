@@ -38,7 +38,7 @@ export default function Home() {
         </ContainerScroll>
         <div className="absolute bottom-0 left-0 right-0 z-10 top-1/2 bg-gradient-to-t dark:from-background " />
       </section>
-      <section className="grid place-items-center">
+      <section className="flex items-center justify-center">
         <ScrollingCard
           direction="right"
           items={CLIENTS}

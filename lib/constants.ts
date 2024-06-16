@@ -31,7 +31,7 @@ export const USERS = [
     name: "Raj Bidu",
     title: "Raj Bidu",
     quote:
-      "I was skeptical at first, but Cypress exceeded my expectations. Our project timelines have improved, and collaboration between teams is seamless.",
+      "Mereko bhai bahoooooooooooooooooot acha laga ye tool, Cypress. this is the best.",
   },
   {
     name: "Aditi",
